@@ -1,0 +1,22 @@
+<div class="container mt-3">
+  <h2>Product Data</h2>
+
+  <!-- Button to fetch data -->
+  
+
+  <!-- Display data once fetched -->
+  <div *ngIf="data.length > 0">
+    <h3>Fetched Data</h3>
+    <ul class="list-group">
+      <li *ngFor="let item of data" class="list-group-item">
+        <!-- Adjust the property names to match the structure of your data -->
+        {{ item.name }} - {{ item.data.product }} - {{ item.data.Quantity }}
+      </li>
+    </ul>
+  </div>
+
+  <!-- Message for empty data -->
+  <div *ngIf="data.length === 0">
+    <p>No data available.</p>
+  </div>
+</div>

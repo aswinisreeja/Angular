@@ -1,0 +1,43 @@
+<div class="container">
+    <h2>Product Form</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input [(ngModel)]="product.name" name="name" class="form-control" required />
+      </div>
+      <div class="form-group">
+        <label for="product">Product</label>
+        <input [(ngModel)]="product.product" name="product" class="form-control" required />
+      </div>
+      <div class="form-group">
+        <label for="quantity">Quantity</label>
+        <input [(ngModel)]="product.quantity" name="quantity" type="number" class="form-control" required />
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  
+    <h3>Submitted Products</h3>
+    <table class="table table-bordered" *ngIf="submittedProducts.length > 0">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Product</th>
+          <th>Quantity</th>
+ 
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of submittedProducts">
+          <td>{{ product.name }}</td>
+          <td>{{ product.product }}</td>
+          <td>{{ product.quantity }}</td>
+         
+        </tr>
+      </tbody>
+    </table>
+  
+    <div *ngIf="submittedProducts.length === 0">
+      No products submitted yet.
+    </div>
+  </div>
+  <!-- <router-outlet></router-outlet> -->
